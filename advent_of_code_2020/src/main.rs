@@ -1,7 +1,10 @@
 mod days;
 
 fn get_solver_funcs() -> Vec<Vec<&'static dyn Fn() -> ()>> {
-    let arr: Vec<Vec<&dyn Fn() -> ()>> = vec![vec![&days::day1::part_one, &days::day1::part_two]];
+    let arr: Vec<Vec<&dyn Fn() -> ()>> = vec![
+        vec![&days::day1::part_one, &days::day1::part_two],
+        vec![&days::day2::part_one, &days::day2::part_two]
+    ];
     return arr
 }
 

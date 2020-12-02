@@ -6,11 +6,9 @@ pub fn part_one() -> () {
     for i in 0..list.len()-1 {
         let num_1: i32 = list[i].trim().parse().unwrap();
         for j in 0..list.len()-1 {
-            if i != j {
-                let num_2:i32 = list[j].trim().parse().unwrap();
-                if num_1 + num_2 == 2020 {
-                    println!("{}", num_1 * num_2);
-                }
+            let num_2:i32 = list[j].trim().parse().unwrap();
+            if num_1 + num_2 == 2020 {
+                println!("{}", num_1 * num_2);
             }
         }
     }
