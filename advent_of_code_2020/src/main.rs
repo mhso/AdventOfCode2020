@@ -5,7 +5,8 @@ fn get_solver_funcs() -> Vec<Vec<&'static dyn Fn() -> ()>> {
         vec![&days::day1::part_one, &days::day1::part_two],
         vec![&days::day2::part_one, &days::day2::part_two],
         vec![&days::day3::part_one, &days::day3::part_two],
-        vec![&days::day4::part_one, &days::day4::part_two]
+        vec![&days::day4::part_one, &days::day4::part_two],
+        vec![&days::day5::part_one, &days::day5::part_two]
     ];
     return arr
 }
