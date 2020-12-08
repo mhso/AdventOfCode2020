@@ -78,30 +78,7 @@ pub fn part_one() -> () {
     }
     
     let visits = bfs(&map, "shiny gold");
-    println!("{}", visits);
-}
-
-fn bfs_again(map: &HashMap<&str, Vec<(String, u32)>>, initial: &str) -> u32 {
-    let mut visited: HashSet<&str> = HashSet::new();
-    let mut queue:Queue<&str> = queue![initial];
-    let mut count = 0;
-
-    while queue.size() > 0 {
-        let node = queue.remove().unwrap();
-        if !visited.contains(node) {
-            visited.insert(node);
-            match map.get(node) {
-                Some(neighbors) => {
-                    for (neighbor, amount) in neighbors {
-                        count += amount + 1;
-                        queue.add(neighbor).unwrap();
-                    }
-                },
-                None => continue
-            }
-        }
-    }
-    return count;
+    println!("Part 1: {}", visits);
 }
 
 fn size_recurse(map: &HashMap<&str, Vec<(String, u32)>>, elem: &str) -> u32 {
@@ -156,5 +133,5 @@ pub fn part_two() -> () {
     println!("{}", map["shiny gold"].len());
 
     let bags = size_recurse(&map, "shiny gold");
-    println!("{}", bags);
+    println!("Part 2: {}", bags);
 }
