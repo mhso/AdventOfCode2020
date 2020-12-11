@@ -1,17 +1,6 @@
-from sys import argv
+from glob import glob
 
-if len(argv) == 1:
-    print("Specify a day")
-    exit(0)
-
-day = None
-try:
-    day = int(argv[1])
-    if day < 1 or day > 25:
-        raise ValueError
-except ValueError:
-    print("Invalid day")
-    exit(0)
+day = len(glob("advent_of_code_2020/src/days/*.rs")) + 1
 
 with open(f"advent_of_code_2020/src/days/day{day}.rs", "w") as fp:
     fp.write(
@@ -47,3 +36,5 @@ with open(day_file, "w") as fp:
 
     for line in lines[-3:]:
         fp.write(line)
+
+print(f"Added day {day}")

@@ -4,16 +4,6 @@ use queues::*;
 use std::collections::HashMap;
 use std::collections::HashSet;
 
-fn print_graph(map: &HashMap<String, Vec<&str>>) {
-    for (k, v) in map {
-        print!("{}: [", k);
-        for x in v {
-            print!("{}, ", x);
-        }
-        println!("]");
-    }
-}
-
 fn bfs(map: &HashMap<String, Vec<&str>>, initial: &str) -> usize {
     let mut visited: HashSet<&str> = HashSet::new();
     let mut queue:Queue<&str> = queue![initial];
