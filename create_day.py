@@ -1,4 +1,5 @@
 from glob import glob
+import requests
 
 day = len(glob("advent_of_code_2020/src/days/*.rs")) + 1
 
@@ -17,7 +18,19 @@ with open(f"advent_of_code_2020/src/days/day{day}.rs", "w") as fp:
         "}"
     )
 
-open(f"advent_of_code_2020/input/day{day}.txt", "w").close()
+with open(f"advent_of_code_2020/input/day{day}.txt", "w") as fp:
+    r = requests.get(
+        f"https://adventofcode.com/2020/day/{day}/input",
+        cookies={
+            "session":
+            (
+                "53616c7465645f5f2c07d1835e2d7af6130ea46997c1707"
+                "4f9761b162346049c52435b87172de43fe8530a7e46201a60"
+            )
+        }
+    )
+    r.encoding = "utf-8"
+    fp.write(r.text)
 
 day_file = f"advent_of_code_2020/src/days.rs"
 lines = open(day_file, "r").readlines()

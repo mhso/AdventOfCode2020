@@ -8,6 +8,7 @@ pub mod day7;
 pub mod day8;
 pub mod day9;
 pub mod day10;
+pub mod day11;
 
 pub fn get_solver_funcs() -> Vec<Vec<&'static dyn Fn() -> ()>> {
     let arr: Vec<Vec<&dyn Fn() -> ()>> = vec![
@@ -20,7 +21,8 @@ pub fn get_solver_funcs() -> Vec<Vec<&'static dyn Fn() -> ()>> {
 		vec![&day7::part_one, &day7::part_two],
 		vec![&day8::part_one, &day8::part_two],
 		vec![&day9::part_one, &day9::part_two],
-		vec![&day10::part_one, &day10::part_two]
+		vec![&day10::part_one, &day10::part_two],
+		vec![&day11::part_one, &day11::part_two]
     ];
     return arr
 }
