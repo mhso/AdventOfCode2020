@@ -18,18 +18,6 @@ fn get_occupied_neighbors(config: &Vec<Vec<char>>, i : i32, j : i32) -> u32 {
     return count;
 }
 
-fn print_vec(vector: &Vec<Vec<char>>) {
-    println!("[");
-    for i in 0..vector.len() {
-        print!(" ");
-        for j in 0..vector[i].len() {
-            print!("{}", vector[i][j]);
-        }
-        println!();
-    }
-    println!("]")
-}
-
 pub fn part_one() -> () {
 	let lines = util::read_input(11);
     let list: Vec<&str> = lines.split("\n").collect();
