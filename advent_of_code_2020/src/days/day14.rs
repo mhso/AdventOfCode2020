@@ -1,6 +1,5 @@
 extern crate util;
 use std::collections::HashMap;
-use itertools::Itertools;
 
 fn apply_mask(num: u64, mask: &str) -> u64 {
     let mut fmt = format!("{:b}", num);
